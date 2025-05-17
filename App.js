@@ -1,14 +1,13 @@
 import { useState } from "react";
-import { StyleSheet, SafeAreaView, Platform } from "react-native";
+import { StyleSheet, SafeAreaView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useFonts } from "expo-font";
-import AppLoading from "expo-app-loading";
 import { StatusBar } from "expo-status-bar";
 import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./screens/GameScreen";
 import GameOverScreen from "./screens/GameOverScreen";
 import Colors from "./constants/Colors";
-import CrossPlatformImageBackground from "./components/ui/CrossPlatformImageBackground"; // Import the custom component
+import CrossPlatformImageBackground from "./components/ui/CrossPlatformImageBackground";
 
 export default function App() {
   const [userNumber, setUserNumber] = useState();
@@ -21,7 +20,7 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return null;
   }
 
   function pickedNumberHandler(pickedNumber) {
